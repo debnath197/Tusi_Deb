@@ -14,14 +14,14 @@ body{
   display:none;
 }
 
-/* first photo page image */
+/* PAGE 2 IMAGE */
 img{
   width:100%;
-  max-height:90vh;
+  height:100vh;
   object-fit:cover;
 }
 
-/* background page */
+/* PAGE 3 BACKGROUND IMAGE */
 .bg{
   background:url("tusi bari.jpeg") no-repeat center center/cover;
   height:100vh;
@@ -29,36 +29,33 @@ img{
   color:white;
 }
 
-/* LOVE text design */
+/* LOVE TEXT */
 .love{
   position:absolute;
-  top:40%;
-  left:50%;
-  transform:translate(-50%,-50%);
-  font-size:60px;
+  top:35%;
+  width:100%;
+  font-size:55px;
   font-weight:bold;
-  color:#fff;
-  text-shadow:0 0 20px red, 0 0 40px pink;
+  text-shadow:0 0 20px red,0 0 40px pink;
 }
 
-/* buttons */
+/* BUTTON STYLE */
 .link, .td{
-  font-size:28px;
+  font-size:30px;
   cursor:pointer;
-  margin:20px;
-  display:inline-block;
+  margin-top:20px;
 }
 
-/* bottom TD */
+/* TD BOTTOM */
 .bottom{
   position:absolute;
   bottom:30px;
   width:100%;
 }
-
 </style>
 
 </head>
+
 <body>
 
 <!-- PAGE 1 -->
@@ -66,16 +63,13 @@ img{
   <div class="link" onclick="showPage('page2')">OPEN</div>
 </div>
 
-
-<!-- PAGE 2 (photo page) -->
+<!-- PAGE 2 -->
 <div id="page2" class="page">
-  <img src="TAJ.jpeg">
-  <br>
+  <img src="taj.jpg">
   <div class="td" onclick="showPage('page3')">TD</div>
 </div>
 
-
-<!-- PAGE 3 (LOVE background page) -->
+<!-- PAGE 3 -->
 <div id="page3" class="page bg">
 
   <div class="love">LOVE ❤️</div>
@@ -86,19 +80,18 @@ img{
 
 </div>
 
-
-<!-- PAGE 4 (blank next page) -->
+<!-- PAGE 4 -->
 <div id="page4" class="page">
 </div>
-
 
 <script>
 function showPage(pageId){
 
-  document.getElementById("page1").style.display="none";
-  document.getElementById("page2").style.display="none";
-  document.getElementById("page3").style.display="none";
-  document.getElementById("page4").style.display="none";
+  var pages = document.getElementsByClassName("page");
+
+  for(var i=0;i<pages.length;i++){
+    pages[i].style.display="none";
+  }
 
   document.getElementById(pageId).style.display="block";
 }
