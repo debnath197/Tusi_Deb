@@ -14,24 +14,48 @@ body{
   display:none;
 }
 
+/* first photo page image */
 img{
   width:100%;
   max-height:90vh;
   object-fit:cover;
 }
 
-.link{
+/* background page */
+.bg{
+  background:url("tusi bari.jpeg") no-repeat center center/cover;
+  height:100vh;
+  position:relative;
+  color:white;
+}
+
+/* LOVE text design */
+.love{
+  position:absolute;
+  top:40%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  font-size:60px;
+  font-weight:bold;
+  color:#fff;
+  text-shadow:0 0 20px red, 0 0 40px pink;
+}
+
+/* buttons */
+.link, .td{
   font-size:28px;
   cursor:pointer;
-  margin-top:40px;
+  margin:20px;
   display:inline-block;
 }
 
-.td{
-  font-size:28px;
-  cursor:pointer;
-  margin:15px;
+/* bottom TD */
+.bottom{
+  position:absolute;
+  bottom:30px;
+  width:100%;
 }
+
 </style>
 
 </head>
@@ -43,7 +67,7 @@ img{
 </div>
 
 
-<!-- PAGE 2 -->
+<!-- PAGE 2 (photo page) -->
 <div id="page2" class="page">
   <img src="TAJ.jpeg">
   <br>
@@ -51,22 +75,33 @@ img{
 </div>
 
 
-<!-- PAGE 3 -->
-<div id="page3" class="page">
+<!-- PAGE 3 (LOVE background page) -->
+<div id="page3" class="page bg">
+
+  <div class="love">LOVE ❤️</div>
+
+  <div class="bottom">
+    <div class="td" onclick="showPage('page4')">TD</div>
+  </div>
+
+</div>
+
+
+<!-- PAGE 4 (blank next page) -->
+<div id="page4" class="page">
 </div>
 
 
 <script>
-
 function showPage(pageId){
 
   document.getElementById("page1").style.display="none";
   document.getElementById("page2").style.display="none";
   document.getElementById("page3").style.display="none";
+  document.getElementById("page4").style.display="none";
 
   document.getElementById(pageId).style.display="block";
 }
-
 </script>
 
 </body>
